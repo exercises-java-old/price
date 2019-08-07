@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="priceComponentClient" class="se.lexicon.price.component.client.PriceComponentClientImpl">
+    <bean id="priceComponentClient" class="ibm.lexicon.price.component.client.PriceComponentClientImpl">
         <constructor-arg name="priceComponentService" ref="priceComponentService"/>
     </bean>
 

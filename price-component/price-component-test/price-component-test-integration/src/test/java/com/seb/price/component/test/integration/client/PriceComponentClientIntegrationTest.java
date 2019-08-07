@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.rules.RuleChain;
 import org.openspaces.core.GigaSpace;
-import se.lexicon.price.component.client.PriceComponentClient;
+import ibm.lexicon.price.component.client.PriceComponentClient;
 import se.lexicon.price.component.entity.PriceEntity;
 import se.lexicon.price.component.test.common.domain.PriceTestBuilder;
 

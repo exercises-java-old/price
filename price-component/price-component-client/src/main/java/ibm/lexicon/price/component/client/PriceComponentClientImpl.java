@@ -1,4 +1,4 @@
-package se.lexicon.price.component.client;
+package ibm.lexicon.price.component.client;
 
 import se.lexicon.price.component.domain.Price;
 import se.lexicon.price.component.service.PriceComponentService;
