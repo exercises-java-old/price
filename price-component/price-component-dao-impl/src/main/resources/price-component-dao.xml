@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="priceBalanceDao" class="se.lexicon.price.component.dao.PriceBalanceDaoImpl">
+        <constructor-arg name="gigaSpace" ref="priceGigaSpace"/>
+    </bean>
+
+    <bean id="priceTransactionDao" class="se.lexicon.price.component.dao.PriceTransactionDaoImpl">
+        <constructor-arg name="gigaSpace" ref="priceGigaSpace"/>
+    </bean>
+
+
+    <bean id="priceDao" class="se.lexicon.price.component.dao.PriceDaoImpl">
+        <constructor-arg name="gigaSpace" ref="priceGigaSpace"/>
+    </bean>
+
+
+    <bean id="orderDao" class="se.lexicon.price.component.dao.OrderDaoImpl">
+        <constructor-arg name="gigaSpace" ref="priceGigaSpace"/>
+    </bean>
+
+
+</beans>
