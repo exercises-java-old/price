@@ -17,20 +17,28 @@ public class PriceTestBuilder extends AbstractTestBuilder<Price> {
     public PriceTestBuilder(Price.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
         this.builder
-                .withPriceId("1111111111")
-                .withAmount(BigDecimal.TEN);
+                .withPriceId("11111")
+                .withInstrumentId("123")
+                .withOrderBookId("234")
+                .withLastPrice(BigDecimal.TEN)
+                .withMarketPrice(BigDecimal.valueOf(9D))
+                .isSeller(Boolean.TRUE)
+                .withAmount(10);
+
 
     }
 
-    public PriceTestBuilder withSsn(String priceId){
+    public PriceTestBuilder builder(String priceId){
         builder.withPriceId(priceId);
         return this;
     }
 
-    public PriceTestBuilder withAmount(BigDecimal amount){
+    public PriceTestBuilder withAmount(Integer amount){
         builder.withAmount(amount);
         return this;
     }
+
+
 
 
     public static PriceTestBuilder builder() {

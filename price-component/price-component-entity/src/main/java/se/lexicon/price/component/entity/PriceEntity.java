@@ -20,7 +20,7 @@ public class PriceEntity extends IdEntity<String> {
     private String id;
 
     // Unique id for the posting
-    private BigDecimal amount;
+    private Integer amount;
 
     private PriceEntity() {
     }
@@ -41,11 +41,11 @@ public class PriceEntity extends IdEntity<String> {
         this.id = id;
     }
 
-    public BigDecimal getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    private void setAmount(BigDecimal amount) {
+    private void setAmount(Integer amount) {
         this.amount = amount;
     }
 
@@ -63,7 +63,7 @@ public class PriceEntity extends IdEntity<String> {
         private String id;
 
         // Unique id for the posting
-        private BigDecimal amount;
+        private Integer amount;
 
         public Builder(boolean template) {
             super(template);
@@ -74,7 +74,7 @@ public class PriceEntity extends IdEntity<String> {
             return this;
         }
 
-        public PriceEntity.Builder withAmount(BigDecimal amount) {
+        public PriceEntity.Builder withAmount(Integer amount) {
             this.amount = amount;
             return this;
         }

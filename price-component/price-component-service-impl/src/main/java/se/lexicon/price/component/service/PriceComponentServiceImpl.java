@@ -27,7 +27,7 @@ public class PriceComponentServiceImpl implements PriceComponentService {
     @Override
     public void createPrice(Price price) {
         PriceEntity priceEntity = PriceEntity.builder()
-                .withId(price.getSsn())
+                .withId(price.getPriceId())
                 .withAmount(price.getAmount()).build();
         priceDao.insert(priceEntity);
     }

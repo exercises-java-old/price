@@ -43,9 +43,7 @@ public class Price extends ValueObject {
     }
 
 
-    public String getSsn() {
-        return priceId;
-    }
+
 
     public Integer getAmount() {
         return amount;
@@ -71,7 +69,7 @@ public class Price extends ValueObject {
         return orderBookId;
     }
 
-    public Boolean getSeller() {
+    public Boolean getIsSeller() {
         return isSeller;
     }
 

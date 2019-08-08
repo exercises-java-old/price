@@ -18,7 +18,7 @@ public class PriceEntityTestBuilder extends AbstractTestBuilder<PriceEntity> {
         this.builder = Required.notNull(builder, "builder");
         this.builder
                 .withId("1111111111")
-                .withAmount(BigDecimal.TEN);
+                .withAmount(10);
 
     }
 
