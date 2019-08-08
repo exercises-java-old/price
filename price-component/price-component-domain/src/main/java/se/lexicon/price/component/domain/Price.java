@@ -15,31 +15,69 @@ public class Price extends ValueObject {
     private static final long serialVersionUID = 1L;
 
 
-    private String ssn;
+    private String priceId;
 
-    private BigDecimal amount;
+    private String instrumentId;
+
+    private Integer amount;
+
+    private BigDecimal lastPrice;
+
+    private BigDecimal marketPrice;
+
+    private String orderBookId;
+
+    private Boolean isSeller;
 
     private Price() {
     }
 
     private Price(Builder builder) {
-        this.ssn = Required.notNull(builder.ssn,"ssn");
+        this.priceId = Required.notNull(builder.priceId,"priceId");
+        this.instrumentId = Required.notNull(builder.instrumentId,"instrumentId");
         this.amount = Required.notNull(builder.amount,"amount");
+        this.lastPrice = Required.notNull(builder.lastPrice,"lastPrice");
+        this.marketPrice = Required.notNull(builder.marketPrice,"marketPrice");
+        this.orderBookId = Required.notNull(builder.orderBookId,"orderBookId");
+        this.isSeller = Required.notNull(builder.isSeller,"isSeller");
     }
 
 
     public String getSsn() {
-        return ssn;
+        return priceId;
     }
 
-    public BigDecimal getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
+    public String getPriceId() {
+        return priceId;
+    }
+
+    public String getInstrumentId() {
+        return instrumentId;
+    }
+
+    public BigDecimal getLastPrice() {
+        return lastPrice;
+    }
+
+    public BigDecimal getMarketPrice() {
+        return marketPrice;
+    }
+
+    public String getOrderBookId() {
+        return orderBookId;
+    }
+
+    public Boolean getSeller() {
+        return isSeller;
+    }
 
     @Override
     protected Object[] getIdFields() {
-        return new Object[]{ssn,amount};
+        return new Object[]{priceId,instrumentId,amount};
     }
 
     public static Builder builder(){
@@ -49,18 +87,52 @@ public class Price extends ValueObject {
     public static class Builder implements com.so4it.common.builder.Builder<Price>{
 
 
-        private String ssn;
+        private String priceId;
 
+        private String instrumentId;
 
-        private BigDecimal amount;
+        private String orderBookId;
 
-        public Builder withSsn(String ssn){
-            this.ssn = ssn;
+        private Integer amount;
+
+        private BigDecimal lastPrice;
+
+        private BigDecimal marketPrice;
+
+        private Boolean isSeller;
+
+        public Builder withPriceId(String priceId){
+            this.priceId = priceId;
+            return this;
+        }
+
+        public Builder withInstrumentId(String instrumentId){
+            this.instrumentId = instrumentId;
+            return this;
+        }
+
+        public Builder withMarketPrice(BigDecimal marketPrice){
+            this.marketPrice = marketPrice;
+            return this;
+        }
+
+        public Builder withLastPrice(BigDecimal lastPrice){
+            this.lastPrice = lastPrice;
+            return this;
+        }
+
+        public Builder isSeller(Boolean isSeller){
+            this.isSeller = isSeller;
+            return this;
+        }
+
+        public Builder withOrderBookId(String orderBookId){
+            this.orderBookId = orderBookId;
             return this;
         }
 
 
-        public Builder withAmount(BigDecimal amount){
+        public Builder withAmount(Integer amount){
             this.amount = amount;
             return this;
         }

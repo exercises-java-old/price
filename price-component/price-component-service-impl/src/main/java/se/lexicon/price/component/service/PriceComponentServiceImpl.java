@@ -34,10 +34,10 @@ public class PriceComponentServiceImpl implements PriceComponentService {
 
 
     @Override
-    public Price getPrice(String ssn) {
-        PriceEntity priceEntity = priceDao.readByIdIfExists(ssn);
+    public Price getPrice(String priceId) {
+        PriceEntity priceEntity = priceDao.readByIdIfExists(priceId);
 
-        return Price.builder().withSsn(ssn).withAmount(priceEntity.getAmount()).build();
+        return Price.builder().withPriceId(priceId).withAmount(priceEntity.getAmount()).build();
 
     }
 

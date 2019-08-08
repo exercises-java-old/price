@@ -17,13 +17,13 @@ public class PriceTestBuilder extends AbstractTestBuilder<Price> {
     public PriceTestBuilder(Price.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
         this.builder
-                .withSsn("1111111111")
+                .withPriceId("1111111111")
                 .withAmount(BigDecimal.TEN);
 
     }
 
-    public PriceTestBuilder withSsn(String ssn){
-        builder.withSsn(ssn);
+    public PriceTestBuilder withSsn(String priceId){
+        builder.withPriceId(priceId);
         return this;
     }
 
