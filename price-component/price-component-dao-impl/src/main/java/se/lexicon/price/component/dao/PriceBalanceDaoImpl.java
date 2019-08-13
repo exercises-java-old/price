@@ -1,7 +1,6 @@
 package se.lexicon.price.component.dao;
 
 import com.j_spaces.core.client.SQLQuery;
-import se.lexicon.price.componment.dao.PriceBalanceDao;
 import se.lexicon.price.component.entity.PriceBalanceEntity;
 import com.so4it.component.dao.gs.AbstractSpaceDao;
 import org.openspaces.core.GigaSpace;

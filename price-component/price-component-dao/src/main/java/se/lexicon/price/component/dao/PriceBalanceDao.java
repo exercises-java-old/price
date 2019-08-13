@@ -1,4 +1,4 @@
-package se.lexicon.price.componment.dao;
+package se.lexicon.price.component.dao;
 
 import se.lexicon.price.component.entity.PriceBalanceEntity;
 import com.so4it.component.GenericDao;

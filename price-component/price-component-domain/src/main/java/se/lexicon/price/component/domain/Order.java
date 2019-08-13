@@ -33,7 +33,9 @@ public class Order extends ValueObject implements Serializable {
         this.id = builder.id;
         this.amount = Required.notNull(builder.amount,"amount");
         this.orderBookId = builder.orderBookId;
-        this.ssn = Required.notNull(builder.ssn,"ssn");
+        //this.ssn = Required.notNull(builder.ssn,"ssn");
+        this.ssn = builder.ssn,"ssn";
+
     }
 
 

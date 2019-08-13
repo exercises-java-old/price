@@ -1,11 +1,10 @@
 package se.lexicon.price.component.service;
 
 import se.lexicon.price.component.domain.Price;
-import se.lexicon.price.componment.dao.OrderDao;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.price.component.entity.PriceEntity;
-import se.lexicon.price.componment.dao.PriceDao;
+import se.lexicon.price.component.dao.PriceDao;
 
 import java.math.BigDecimal;
 import java.util.Set;

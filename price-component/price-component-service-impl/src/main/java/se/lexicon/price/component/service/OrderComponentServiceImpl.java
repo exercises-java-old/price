@@ -6,8 +6,7 @@ import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.price.component.domain.Order;
 import se.lexicon.price.component.domain.Orders;
-import se.lexicon.price.componment.dao.OrderDao;
-import se.lexicon.price.componment.dao.PriceDao;
+import se.lexicon.price.component.dao.PriceDao;
 
 import java.math.BigDecimal;
 import java.util.stream.Collectors;
