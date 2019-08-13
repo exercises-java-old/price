@@ -24,6 +24,7 @@ public class PriceDaoImpl extends AbstractSpaceDao<PriceEntity, String> implemen
 
     @Override
     public BigDecimal sum() {
+
         return QueryExtension.sum(getGigaSpace(),new SQLQuery<>(PriceEntity.class,""),"amount");
     }
 }
