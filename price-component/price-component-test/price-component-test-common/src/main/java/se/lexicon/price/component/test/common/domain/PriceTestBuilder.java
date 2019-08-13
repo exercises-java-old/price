@@ -1,5 +1,6 @@
 package se.lexicon.price.component.test.common.domain;
 
+import se.lexicon.price.component.domain.Money;
 import se.lexicon.price.component.domain.Price;
 import com.so4it.common.util.object.Required;
 import com.so4it.test.domain.AbstractTestBuilder;
@@ -19,11 +20,7 @@ public class PriceTestBuilder extends AbstractTestBuilder<Price> {
         this.builder
                 .withPriceId("11111")
                 .withInstrumentId("123")
-                .withOrderBookId("234")
-                .withLastPrice(BigDecimal.TEN)
-                .withMarketPrice(BigDecimal.valueOf(9D))
-                .isSeller(Boolean.TRUE)
-                .withAmount(10);
+                .withValue(Money.builder().withAmount(BigDecimal.valueOf(10)).build());
 
 
     }
@@ -33,11 +30,20 @@ public class PriceTestBuilder extends AbstractTestBuilder<Price> {
         return this;
     }
 
-    public PriceTestBuilder withAmount(Integer amount){
-        builder.withAmount(amount);
+    public PriceTestBuilder withPriceId(String priceId){
+        builder.withPriceId(priceId);
         return this;
     }
 
+    public PriceTestBuilder withValue(Money value){
+        builder.withValue(value);
+        return this;
+    }
+
+    public PriceTestBuilder withInstrumentId(String instrumentId){
+        builder.withInstrumentId(instrumentId);
+        return this;
+    }
 
 
 

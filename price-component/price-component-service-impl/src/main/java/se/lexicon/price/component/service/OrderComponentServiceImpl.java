@@ -1,11 +1,13 @@
 package se.lexicon.price.component.service;
 
-import se.lexicon.price.component.entity.OrderEntity;
+import se.lexicon.price.component.domain.Price;
+import se.lexicon.price.component.entity.PriceEntity;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.price.component.domain.Order;
 import se.lexicon.price.component.domain.Orders;
 import se.lexicon.price.componment.dao.OrderDao;
+import se.lexicon.price.componment.dao.PriceDao;
 
 import java.math.BigDecimal;
 import java.util.stream.Collectors;
@@ -15,32 +17,32 @@ public class OrderComponentServiceImpl implements OrderComponentService {
 
 
 
-    private OrderDao orderDao;
+    private PriceDao priceDao;
 
 
-    public OrderComponentServiceImpl(OrderDao orderDao) {
-        this.orderDao = Required.notNull(orderDao,"orderDao");
+    public OrderComponentServiceImpl(PriceDao priceDao) {
+        this.priceDao = Required.notNull(priceDao,"priceDao");
     }
 
     @Override
-    public Orders getOrders(String ssn) {
-        return Orders.valueOf(orderDao.readAll(OrderEntity.templateBuilder().withSsn(ssn).build()).stream().
+    public Orders getPrices(String instrumentId) {
+        return Orders.valueOf(priceDao.readAll(PriceEntity.templateBuilder().withInstrumentId(instrumentId).build()).stream().
                 map( entity -> Order.builder()
                         .withId(entity.getId())
-                        .withSsn(ssn)
-                        .withAmount(entity.getAmount())
+                        .withSsn(instrumentId)
+                        .withAmount(entity.getValue().getAmount())
                         .withOrderBookId("").build()).collect(Collectors.toSet()));
     }
 
 
     @Override
-    public void placeOrder(Order order) {
-        orderDao.insert(OrderEntity.builder().withSsn(order.getSsn()).withAmount(order.getAmount()).build());
+    public void placePrice(Price price) {
+        priceDao.insert(PriceEntity.builder().withInstrumentId(price.getInstrumentId()).withValue(price.getValue()).build());
     }
 
 
     @Override
-    public BigDecimal getTotalOrderValueOfAllPrices() {
-        return orderDao.sum();
+    public BigDecimal getTotalPriceValueOfAllPrices() {
+        return priceDao.sum();
     }
 }

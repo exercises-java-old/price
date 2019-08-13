@@ -12,10 +12,10 @@ public interface PriceComponentService {
     String DEFAULT_BEAN_NAME = "priceComponentService";
 
     //price.hashCode() % numberOfPartitions
-    void createPrice(@Routing("getSsn") Price price);
+    void createPrice(@Routing("getInstrumentId") Price price);
 
     //price.hashCode() % numberOfPartitions
-    Price getPrice(@Routing String ssn);
+    Price getPrice(@Routing String instrumentId);
 
 
     @Broadcast(reducer =  BigDecimalRemoteResultReducer.class)

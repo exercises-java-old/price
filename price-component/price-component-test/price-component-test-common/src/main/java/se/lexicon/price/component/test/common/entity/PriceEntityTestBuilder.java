@@ -1,5 +1,6 @@
 package se.lexicon.price.component.test.common.entity;
 
+import se.lexicon.price.component.domain.Money;
 import se.lexicon.price.component.entity.PriceEntity;
 import com.so4it.common.util.object.Required;
 import com.so4it.test.domain.AbstractTestBuilder;
@@ -18,7 +19,8 @@ public class PriceEntityTestBuilder extends AbstractTestBuilder<PriceEntity> {
         this.builder = Required.notNull(builder, "builder");
         this.builder
                 .withId("1111111111")
-                .withAmount(10);
+                .withInstrumentId("123123")
+                .withValue(Money.builder().withAmount(BigDecimal.TEN).build());
 
     }
 

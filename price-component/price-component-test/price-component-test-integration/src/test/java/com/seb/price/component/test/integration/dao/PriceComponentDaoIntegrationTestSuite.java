@@ -27,7 +27,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         PriceComponentDaoIntegrationTest.class,
-        OrderComponentDaoIntegrationTest.class
+
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PriceComponentDaoIntegrationTestSuite {

@@ -5,7 +5,7 @@
 
     <bean id="priceComponentService" class="se.lexicon.price.component.service.PriceComponentServiceImpl">
         <constructor-arg name="priceDao" ref="priceDao"/>
-        <constructor-arg name="orderDao" ref="orderDao"/>
+
     </bean>
 
 

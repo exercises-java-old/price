@@ -1,6 +1,7 @@
 package se.lexicon.price.componment.dao;
 
 import se.lexicon.price.component.entity.OrderEntity;
+import se.lexicon.price.component.entity.PriceEntity;
 import com.so4it.component.GenericDao;
 
 import java.math.BigDecimal;

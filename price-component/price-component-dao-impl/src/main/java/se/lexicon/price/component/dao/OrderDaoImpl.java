@@ -2,6 +2,7 @@ package se.lexicon.price.component.dao;
 
 import com.j_spaces.core.client.SQLQuery;
 import se.lexicon.price.component.entity.OrderEntity;
+import se.lexicon.price.component.entity.PriceEntity;
 import org.openspaces.extensions.QueryExtension;
 import se.lexicon.price.componment.dao.OrderDao;
 import com.so4it.component.dao.gs.AbstractSpaceDao;
@@ -24,7 +25,7 @@ public class OrderDaoImpl extends AbstractSpaceDao<OrderEntity, String> implemen
 
     @Override
     public BigDecimal sum() {
-        return QueryExtension.sum(getGigaSpace(),new SQLQuery<>(OrderEntity.class,""),"amount");
+        return QueryExtension.sum(getGigaSpace(),new SQLQuery<>(PriceEntity.class,""),"amount");
     }
 }
 

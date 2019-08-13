@@ -16,19 +16,17 @@ public class PriceComponentServiceImpl implements PriceComponentService {
     private final PriceDao priceDao;
 
 
-
-    private final OrderDao orderDao;
-
-    public PriceComponentServiceImpl(PriceDao priceDao,OrderDao orderDao) {
+    public PriceComponentServiceImpl(PriceDao priceDao) {
         this.priceDao = Required.notNull(priceDao, "priceDao");
-        this.orderDao = Required.notNull(orderDao, "orderDao");
+
     }
 
     @Override
     public void createPrice(Price price) {
         PriceEntity priceEntity = PriceEntity.builder()
                 .withId(price.getPriceId())
-                .withAmount(price.getAmount()).build();
+                .withInstrumentId(price.getInstrumentId())
+                .withValue(price.getValue()).build();
         priceDao.insert(priceEntity);
     }
 
@@ -37,7 +35,7 @@ public class PriceComponentServiceImpl implements PriceComponentService {
     public Price getPrice(String priceId) {
         PriceEntity priceEntity = priceDao.readByIdIfExists(priceId);
 
-        return Price.builder().withPriceId(priceId).withAmount(priceEntity.getAmount()).build();
+        return Price.builder().withPriceId(priceId).withInstrumentId(priceEntity.getInstrumentId()).withValue(priceEntity.getValue()).build();
 
     }
 
@@ -45,6 +43,6 @@ public class PriceComponentServiceImpl implements PriceComponentService {
     @Override
     public BigDecimal getTotalAmountOnPrices() {
         Set<PriceEntity> entities = priceDao.readAll();
-        return BigDecimal.valueOf( entities.stream().map( rr -> rr.getAmount().doubleValue()).reduce(0.0,Double::sum));
+        return BigDecimal.valueOf( entities.stream().map( rr -> rr.getValue().getAmount().doubleValue()).reduce(0.0,Double::sum));
     }
 }

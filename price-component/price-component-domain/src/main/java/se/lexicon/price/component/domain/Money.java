@@ -17,7 +17,8 @@ public final class Money extends ValueObject {
     private Money() {}
     private Money(Builder builder) {
         this.amount = Required.notNull(builder.amount, "amount");
-        this.currency = Required.notNull(builder.currency, "currency");
+        //this.currency = Required.notNull(builder.currency, "currency");
+        this.currency = builder.currency;
     }
 
     public BigDecimal getAmount() {
