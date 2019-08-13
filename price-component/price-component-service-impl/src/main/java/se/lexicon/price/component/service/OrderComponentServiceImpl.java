@@ -43,6 +43,7 @@ public class OrderComponentServiceImpl implements OrderComponentService {
 
     @Override
     public BigDecimal getTotalPriceValueOfAllPrices() {
+
         return priceDao.sum();
     }
 }
