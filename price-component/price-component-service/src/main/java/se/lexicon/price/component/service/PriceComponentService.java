@@ -11,7 +11,7 @@ public interface PriceComponentService {
 
     String DEFAULT_BEAN_NAME = "priceComponentService";
 
-    //price.hashCode() % numberOfPartitions
+
     void createPrice(@Routing("getInstrumentId") Price price);
 
     //price.hashCode() % numberOfPartitions
@@ -22,5 +22,6 @@ public interface PriceComponentService {
     BigDecimal getTotalAmountOnPrices();
 
 
+    BigDecimal placePrice(@Routing String instrumentId);
 
 }

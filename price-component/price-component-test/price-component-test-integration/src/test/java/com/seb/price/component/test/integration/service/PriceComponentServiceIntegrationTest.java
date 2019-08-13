@@ -42,4 +42,16 @@ public class PriceComponentServiceIntegrationTest {
         Assert.assertEquals(BigDecimal.valueOf(200.0), priceComponentService.getTotalAmountOnPrices());
     }
 
+    @Test
+    public void testPlacePrice(){
+        PriceComponentService priceComponentService = PriceComponentServiceIntegrationTestSuite.getImportContext().getBean(PriceComponentService.class);
+        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("22").withInstrumentId("inst2").withValue(Money.builder().withAmount(BigDecimal.valueOf(1000)).build()).build());
+        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("20").withInstrumentId("inst1").withValue(Money.builder().withAmount(BigDecimal.valueOf(1500)).build()).build());
+        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("23").withInstrumentId("inst1").withValue(Money.builder().withAmount(BigDecimal.valueOf(1500)).build()).build());
+        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("26").withInstrumentId("inst1").withValue(Money.builder().withAmount(BigDecimal.valueOf(1500)).build()).build());
+
+        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("33").withInstrumentId("inst2").withValue(Money.builder().withAmount(BigDecimal.valueOf(100)).build()).build());
+        Assert.assertEquals(BigDecimal.valueOf(1500), priceComponentService.placePrice("inst1"));
+    }
+
 }
