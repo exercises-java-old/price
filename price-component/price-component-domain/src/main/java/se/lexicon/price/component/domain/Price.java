@@ -19,15 +19,7 @@ public class Price extends ValueObject {
 
     private String instrumentId;
 
-    private Integer amount;
-
-    private BigDecimal lastPrice;
-
-    private BigDecimal marketPrice;
-
-    private String orderBookId;
-
-    private Boolean isSeller;
+    private Money value;
 
     private Price() {
     }
@@ -35,18 +27,14 @@ public class Price extends ValueObject {
     private Price(Builder builder) {
         this.priceId = Required.notNull(builder.priceId,"priceId");
         this.instrumentId = Required.notNull(builder.instrumentId,"instrumentId");
-        this.amount = Required.notNull(builder.amount,"amount");
-        this.lastPrice = Required.notNull(builder.lastPrice,"lastPrice");
-        this.marketPrice = Required.notNull(builder.marketPrice,"marketPrice");
-        this.orderBookId = Required.notNull(builder.orderBookId,"orderBookId");
-        this.isSeller = Required.notNull(builder.isSeller,"isSeller");
+        this.value = Required.notNull(builder.value,"amount");
     }
 
 
 
 
-    public Integer getAmount() {
-        return amount;
+    public Money getValue() {
+        return value;
     }
 
     public String getPriceId() {
@@ -57,25 +45,10 @@ public class Price extends ValueObject {
         return instrumentId;
     }
 
-    public BigDecimal getLastPrice() {
-        return lastPrice;
-    }
-
-    public BigDecimal getMarketPrice() {
-        return marketPrice;
-    }
-
-    public String getOrderBookId() {
-        return orderBookId;
-    }
-
-    public Boolean getIsSeller() {
-        return isSeller;
-    }
 
     @Override
     protected Object[] getIdFields() {
-        return new Object[]{priceId,instrumentId,amount};
+        return new Object[]{priceId,instrumentId,value};
     }
 
     public static Builder builder(){
@@ -89,15 +62,7 @@ public class Price extends ValueObject {
 
         private String instrumentId;
 
-        private String orderBookId;
-
-        private Integer amount;
-
-        private BigDecimal lastPrice;
-
-        private BigDecimal marketPrice;
-
-        private Boolean isSeller;
+        private Money value;
 
         public Builder withPriceId(String priceId){
             this.priceId = priceId;
@@ -109,29 +74,9 @@ public class Price extends ValueObject {
             return this;
         }
 
-        public Builder withMarketPrice(BigDecimal marketPrice){
-            this.marketPrice = marketPrice;
-            return this;
-        }
 
-        public Builder withLastPrice(BigDecimal lastPrice){
-            this.lastPrice = lastPrice;
-            return this;
-        }
-
-        public Builder isSeller(Boolean isSeller){
-            this.isSeller = isSeller;
-            return this;
-        }
-
-        public Builder withOrderBookId(String orderBookId){
-            this.orderBookId = orderBookId;
-            return this;
-        }
-
-
-        public Builder withAmount(Integer amount){
-            this.amount = amount;
+        public Builder withValue(Money value){
+            this.value = value;
             return this;
         }
 
