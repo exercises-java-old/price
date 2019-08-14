@@ -27,29 +27,10 @@ public class PriceDaoImpl extends AbstractSpaceDao<PriceEntity, String> implemen
         super(gigaSpace);
     }
 
-    /*
     @Override
-    public PriceEntity getLastPrice(Long instrumentId) {
-        return null;
+    public BigDecimal sum(){
+         return QueryExtension.sum(getGigaSpace(), new SQLQuery<>(PriceEntity.class, ""), "value.amount");
     }
-
-    @Override
-    public Set<PriceEntity> getAllPrices(Long instrumentId) {
-        return null;
-    }
-*/
-
-
-
-
-
-    @Override
-    public BigDecimal sum() {
-        return QueryExtension.sum(getGigaSpace(),new SQLQuery<>(PriceEntity.class,""),"amount");
-    }
-
-
-
 
 }
 

@@ -50,7 +50,9 @@ public class PriceComponentDaoIntegrationTest {
     }
 
     @Test
-    public void sum() throws IOException {
+    public void testSum()  {
+
+        PriceDao priceDao = PriceComponentDaoIntegrationTestSuite.getExportContext().getBean(PriceDao.class);
 
         Currency c1 = Currency.getInstance("SEK");
 
@@ -65,9 +67,34 @@ public class PriceComponentDaoIntegrationTest {
                 .build();
 
         Price p1 = Price.builder().withInstrumentId("1").withPriceId("1").withValue(m1).build();
-        Price p2=Price.builder().withInstrumentId("1").withPriceId("2").withValue(m2).build();
-        Price p3=Price.builder().withInstrumentId("1").withPriceId("3").withValue(m1).build();
+        Price p2 = Price.builder().withInstrumentId("1").withPriceId("2").withValue(m2).build();
+        Price p3 = Price.builder().withInstrumentId("1").withPriceId("3").withValue(m1).build();
 
+        PriceEntity pe1 = PriceEntity.builder()
+                .withInstrumentId(p1.getInstrumentId())
+                .withId("1")
+                .withValue(p1.getValue())
+                .build();
+
+        PriceEntity pe2 = PriceEntity.builder()
+                .withInstrumentId(p2.getInstrumentId())
+                .withId("2")
+                .withValue(p2.getValue())
+                .build();
+
+        PriceEntity pe3 = PriceEntity.builder()
+                .withInstrumentId(p3.getInstrumentId())
+                .withId("3")
+                .withValue(p3.getValue())
+                .build();
+
+        priceDao.insert(pe1);
+        priceDao.insert(pe2);
+        priceDao.insert(pe3);
+
+        BigDecimal sum = priceDao.sum();
+
+        System.out.println(sum);
     }
-    
+
 }
