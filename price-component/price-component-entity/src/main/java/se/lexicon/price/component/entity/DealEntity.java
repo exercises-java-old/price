@@ -1,4 +1,4 @@
-package se.lexicon.price.component.test.common.entity;
+package se.lexicon.price.component.entity;
 
 import com.gigaspaces.annotation.pojo.SpaceClass;
 import com.gigaspaces.annotation.pojo.SpaceId;
@@ -7,6 +7,7 @@ import com.so4it.annotation.Allowed;
 import com.so4it.common.util.object.Required;
 import com.so4it.component.entity.AbstractEntityBuilder;
 import com.so4it.component.entity.IdEntity;
+
 import se.lexicon.price.component.domain.Money;
 
 @SpaceClass
@@ -57,7 +58,7 @@ public class DealEntity extends IdEntity<String> {
         return value;
     }
 
-    public void setValue(Money value) {
+    private void setValue(Money value) {
         this.value = value;
     }
 
@@ -103,7 +104,7 @@ public class DealEntity extends IdEntity<String> {
             return this;
         }
 
-        public DealEntity.Builder withValue(Boolean closed){
+        public DealEntity.Builder withValue(Money value){
             this.value=value;
             return this;
         }
