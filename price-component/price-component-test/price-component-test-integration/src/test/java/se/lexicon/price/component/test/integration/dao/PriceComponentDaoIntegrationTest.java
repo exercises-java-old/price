@@ -52,17 +52,8 @@ public class PriceComponentDaoIntegrationTest {
     @Test
     public void sum() throws IOException {
 
-        Order o1 = Order.builder()
-                .withId("12")
-                .withAmount(BigDecimal.valueOf(200))
-                .build();
-
-        //singleton
         Currency c1 = Currency.getInstance("SEK");
 
-        Currency c2 = Currency.getInstance("$");
-
-        //Builder Patten
         Money m1 = Money.builder()
                 .withCurrency(c1)
                 .withAmount(BigDecimal.valueOf(1000000))
@@ -70,57 +61,13 @@ public class PriceComponentDaoIntegrationTest {
 
         Money m2 = Money.builder()
                 .withCurrency(c1)
-                .withAmount(BigDecimal.valueOf(100000))
-                .build();
-/*
-        Money.Builder builder = Money.builder();
-
-        builder = builder.withAmount(BigDecimal.valueOf(100));
-
-        builder = builder.withCurrency(c1);
-
-        Money m1 = builder.build();
-*/
-        Price p1 = Price.builder()
-                .withInstrumentId("price1")
-                .withPriceId("priceid")
-                .withValue(m1)
-/*                Money.builder()
-                        .withAmount(BigDecimal.valueOf(100))
-                        .withCurrency(Currency.getInstance("SEK"))
-                        .build())*/
+                .withAmount(BigDecimal.valueOf(2000))
                 .build();
 
-        //Price p2=Price.builder().withInstrumentId("price2");
-        //Price p3=Price.builder().withInstrumentId("price");
-
-
-        Price p2= Price.builder().withInstrumentId("price2").withPriceId("priceid").withValue(m2).build();
-
-        Price p3= Price.builder().withInstrumentId("price2").withPriceId("priceid").withValue(m1).build();
-
-
-
-// Setting URL
-        String url_str = "https://api.exchangerate-api.com/v4/latest/USD";
-
-// Making Request
-        URL url = new URL(url_str);
-        HttpURLConnection request = (HttpURLConnection) url.openConnection();
-        request.connect();
-
-// Convert to JSON
-        JsonParser jp = new JsonParser();
-        JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-        JsonObject jsonobj = root.getAsJsonObject();
-
-// Accessing object
-        String req_result = jsonobj.get("result").getAsString();
-
-        System.out.println(req_result);
+        Price p1 = Price.builder().withInstrumentId("1").withPriceId("1").withValue(m1).build();
+        Price p2=Price.builder().withInstrumentId("1").withPriceId("2").withValue(m2).build();
+        Price p3=Price.builder().withInstrumentId("1").withPriceId("3").withValue(m1).build();
 
     }
-
-
-
+    
 }

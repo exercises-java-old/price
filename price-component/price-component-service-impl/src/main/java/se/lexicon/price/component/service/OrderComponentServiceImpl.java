@@ -23,22 +23,21 @@ public class OrderComponentServiceImpl implements OrderComponentService {
         this.priceDao = Required.notNull(priceDao,"priceDao");
     }
 
+
+    //skriv om den i gigaspaces-style
     @Override
     public Orders getPrices(String instrumentId) {
         return Orders.valueOf(priceDao.readAll(PriceEntity.templateBuilder().withInstrumentId(instrumentId).build()).stream().
                 map( entity -> Order.builder()
                         .withId(entity.getId())
-                        .withSsn(instrumentId)
                         .withAmount(entity.getValue().getAmount())
                         .withOrderBookId("").build()).collect(Collectors.toSet()));
     }
-
 
     @Override
     public void placePrice(Price price) {
         priceDao.insert(PriceEntity.builder().withInstrumentId(price.getInstrumentId()).withValue(price.getValue()).build());
     }
-
 
     @Override
     public BigDecimal getTotalPriceValueOfAllPrices() {
