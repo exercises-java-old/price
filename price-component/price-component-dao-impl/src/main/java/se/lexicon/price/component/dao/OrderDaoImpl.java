@@ -4,7 +4,6 @@ import com.j_spaces.core.client.SQLQuery;
 import se.lexicon.price.component.entity.OrderEntity;
 import se.lexicon.price.component.entity.PriceEntity;
 import org.openspaces.extensions.QueryExtension;
-import se.lexicon.price.componment.dao.OrderDao;
 import com.so4it.component.dao.gs.AbstractSpaceDao;
 import org.openspaces.core.GigaSpace;
 
