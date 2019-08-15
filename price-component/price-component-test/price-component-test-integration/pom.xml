@@ -51,7 +51,6 @@
             <artifactId>price-component-service-impl</artifactId>
         </dependency>
 
-
         <dependency>
             <groupId>com.so4it.sugar</groupId>
             <artifactId>configuration-test-common</artifactId>

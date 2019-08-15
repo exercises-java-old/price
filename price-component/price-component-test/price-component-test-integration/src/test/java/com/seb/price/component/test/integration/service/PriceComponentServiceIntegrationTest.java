@@ -1,6 +1,7 @@
 package com.seb.price.component.test.integration.service;
 
 import se.lexicon.price.component.domain.Money;
+import se.lexicon.price.component.test.common.domain.OrderDealTestBuilder;
 import se.lexicon.price.component.test.common.domain.PriceTestBuilder;
 import com.so4it.test.category.IntegrationTest;
 import com.so4it.test.common.Assert;
@@ -18,6 +19,7 @@ import se.lexicon.price.component.service.OrderComponentService;
 import se.lexicon.price.component.test.common.domain.PriceTestBuilder;
 
 import java.math.BigDecimal;
+import java.util.Currency;
 
 /**
  * @author Magnus Poromaa {@literal <mailto:magnus.poromaa@so4it.com/>}
@@ -45,12 +47,12 @@ public class PriceComponentServiceIntegrationTest {
     @Test
     public void testPlacePrice(){
         PriceComponentService priceComponentService = PriceComponentServiceIntegrationTestSuite.getImportContext().getBean(PriceComponentService.class);
-        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("22").withInstrumentId("inst2").withValue(Money.builder().withAmount(BigDecimal.valueOf(1000)).build()).build());
-        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("20").withInstrumentId("inst1").withValue(Money.builder().withAmount(BigDecimal.valueOf(1500)).build()).build());
-        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("23").withInstrumentId("inst1").withValue(Money.builder().withAmount(BigDecimal.valueOf(1500)).build()).build());
-        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("26").withInstrumentId("inst1").withValue(Money.builder().withAmount(BigDecimal.valueOf(1500)).build()).build());
 
-        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("33").withInstrumentId("inst2").withValue(Money.builder().withAmount(BigDecimal.valueOf(100)).build()).build());
+        priceComponentService.createOrderDeal(OrderDealTestBuilder.builder().withId("22").withInstrument("inst2").withPrice(se.lexicon.order.component.domain.Money.builder().withAmount(BigDecimal.valueOf(1000)).withCurrency(Currency.getInstance("SEK")).build()).build());
+        priceComponentService.createOrderDeal(OrderDealTestBuilder.builder().withId("20").withInstrument("inst1").withPrice(se.lexicon.order.component.domain.Money.builder().withAmount(BigDecimal.valueOf(2000)).withCurrency(Currency.getInstance("SEK")).build()).build());
+        priceComponentService.createOrderDeal(OrderDealTestBuilder.builder().withId("23").withInstrument("inst1").withPrice(se.lexicon.order.component.domain.Money.builder().withAmount(BigDecimal.valueOf(1000)).withCurrency(Currency.getInstance("SEK")).build()).build());
+        priceComponentService.createOrderDeal(OrderDealTestBuilder.builder().withId("26").withInstrument("inst1").withPrice(se.lexicon.order.component.domain.Money.builder().withAmount(BigDecimal.valueOf(1500)).withCurrency(Currency.getInstance("SEK")).build()).build());
+
         Assert.assertEquals(BigDecimal.valueOf(1500), priceComponentService.placePrice("inst1"));
     }
 
