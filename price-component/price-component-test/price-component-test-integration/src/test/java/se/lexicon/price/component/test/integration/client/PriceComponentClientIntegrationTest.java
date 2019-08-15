@@ -1,7 +1,7 @@
-package com.seb.price.component.test.integration.client;
+package se.lexicon.price.component.test.integration.client;
 
 
-import com.seb.price.component.test.integration.service.PriceComponentServiceIntegrationTestSuite;
+import se.lexicon.price.component.test.integration.service.PriceComponentServiceIntegrationTestSuite;
 import com.so4it.test.category.IntegrationTest;
 import com.so4it.test.gs.rule.ClearGigaSpaceTestRule;
 import org.junit.Assert;

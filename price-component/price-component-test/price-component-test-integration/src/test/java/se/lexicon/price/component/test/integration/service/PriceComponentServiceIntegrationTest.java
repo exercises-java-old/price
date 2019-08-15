@@ -1,4 +1,4 @@
-package com.seb.price.component.test.integration.service;
+package se.lexicon.price.component.test.integration.service;
 
 import se.lexicon.price.component.domain.Money;
 import se.lexicon.price.component.test.common.domain.OrderDealTestBuilder;
@@ -12,11 +12,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.rules.RuleChain;
 import org.openspaces.core.GigaSpace;
-import se.lexicon.price.component.domain.Orders;
-import se.lexicon.price.component.domain.Price;
 import se.lexicon.price.component.service.PriceComponentService;
-import se.lexicon.price.component.service.OrderComponentService;
-import se.lexicon.price.component.test.common.domain.PriceTestBuilder;
 
 import java.math.BigDecimal;
 import java.util.Currency;

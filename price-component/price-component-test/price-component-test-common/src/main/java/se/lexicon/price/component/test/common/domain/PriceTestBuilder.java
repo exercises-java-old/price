@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.Currency;
 
 /**
- * @author Magnus Poromaa {@literal <mailto:magnus.poromaa@so4it.com/>}
+ * @author Ahmed Molah
  */
 public class PriceTestBuilder extends AbstractTestBuilder<Price> {
 
