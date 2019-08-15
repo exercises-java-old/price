@@ -28,5 +28,24 @@
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-service</artifactId>
         </dependency>
+
+
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>order-component-entity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>order-component-dao</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>order-component-dao-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>order-component-domain</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

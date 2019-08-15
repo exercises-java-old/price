@@ -17,6 +17,10 @@
             <artifactId>price-component-domain</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>order-component-domain</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.so4it.sugar</groupId>
             <artifactId>gigaspaces-rpc</artifactId>
         </dependency>

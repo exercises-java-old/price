@@ -6,6 +6,7 @@ import com.so4it.common.util.object.Required;
 import com.so4it.test.domain.AbstractTestBuilder;
 
 import java.math.BigDecimal;
+import java.util.Currency;
 
 /**
  * @author Ahmed Molah
@@ -20,7 +21,7 @@ public class PriceTestBuilder extends AbstractTestBuilder<Price> {
         this.builder
                 .withPriceId("11111")
                 .withInstrumentId("123")
-                .withValue(Money.builder().withAmount(BigDecimal.valueOf(10)).build());
+                .withValue(Money.builder().withAmount(BigDecimal.valueOf(10)).withCurrency(Currency.getInstance("SEK")).build());
 
 
     }
