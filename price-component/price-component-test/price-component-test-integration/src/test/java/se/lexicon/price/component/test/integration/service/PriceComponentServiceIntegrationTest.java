@@ -1,6 +1,7 @@
 package se.lexicon.price.component.test.integration.service;
 
 import se.lexicon.price.component.domain.Money;
+import se.lexicon.price.component.test.common.domain.MoneyTestBuilder;
 import se.lexicon.price.component.test.common.domain.OrderDealTestBuilder;
 import se.lexicon.price.component.test.common.domain.PriceTestBuilder;
 import com.so4it.test.category.IntegrationTest;
@@ -35,8 +36,8 @@ public class PriceComponentServiceIntegrationTest {
     @Test
     public void testGettingTotalAmount() {
         PriceComponentService priceComponentService = PriceComponentServiceIntegrationTestSuite.getImportContext().getBean(PriceComponentService.class);
-        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("22").withInstrumentId("price1").withValue(Money.builder().withAmount(BigDecimal.valueOf(100)).build()).build());
-        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("33").withInstrumentId("price2").withValue(Money.builder().withAmount(BigDecimal.valueOf(100)).build()).build());
+        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("22").withInstrumentId("price1").withValue(MoneyTestBuilder.builder().build()).build());
+        priceComponentService.createPrice(PriceTestBuilder.builder().withPriceId("33").withInstrumentId("price2").withValue(MoneyTestBuilder.builder().build()).build());
         Assert.assertEquals(BigDecimal.valueOf(200.0), priceComponentService.getTotalAmountOnPrices());
     }
 

@@ -21,9 +21,7 @@ public class PriceTestBuilder extends AbstractTestBuilder<Price> {
         this.builder
                 .withPriceId("11111")
                 .withInstrumentId("123")
-                .withValue(Money.builder().withAmount(BigDecimal.valueOf(10)).withCurrency(Currency.getInstance("SEK")).build());
-
-
+                .withValue(MoneyTestBuilder.builder().build());
     }
 
     public PriceTestBuilder builder(String priceId){

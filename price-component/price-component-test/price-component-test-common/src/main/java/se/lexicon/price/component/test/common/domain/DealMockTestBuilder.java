@@ -21,7 +21,7 @@ import java.math.BigDecimal;
                     .withId("11111")
                     .withInstrument("123")
                     .withClosed(false)
-                    .withValue(Money.builder().withAmount(BigDecimal.valueOf(10)).build());
+                    .withValue(MoneyTestBuilder.builder().build());
         }
 
         public se.lexicon.price.component.test.common.domain.DealMockTestBuilder builder(String priceId){
