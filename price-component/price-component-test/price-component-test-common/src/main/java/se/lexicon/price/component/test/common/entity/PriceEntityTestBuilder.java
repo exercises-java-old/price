@@ -6,6 +6,7 @@ import com.so4it.common.util.object.Required;
 import com.so4it.test.domain.AbstractTestBuilder;
 
 import java.math.BigDecimal;
+import java.util.Currency;
 
 /**
  * @author Magnus Poromaa {@literal <mailto:magnus.poromaa@so4it.com/>}
@@ -20,7 +21,7 @@ public class PriceEntityTestBuilder extends AbstractTestBuilder<PriceEntity> {
         this.builder
                 .withId("1111111111")
                 .withInstrumentId("123123")
-                .withValue(Money.builder().withAmount(BigDecimal.TEN).build());
+                .withValue(Money.builder().withAmount(BigDecimal.TEN).withCurrency(Currency.getInstance("SEK")).build());
 
     }
 
