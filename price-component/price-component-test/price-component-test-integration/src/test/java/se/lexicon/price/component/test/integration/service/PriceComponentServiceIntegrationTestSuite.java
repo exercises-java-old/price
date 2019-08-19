@@ -1,4 +1,4 @@
-package com.seb.price.component.test.integration.service;
+package se.lexicon.price.component.test.integration.service;
 
 import com.so4it.common.bean.MapBeanContext;
 import com.so4it.common.jmx.MBeanRegistry;

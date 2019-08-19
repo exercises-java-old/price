@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.Currency;
 
 
+
 /**
  * @author Ahmed Molah
  */
@@ -24,6 +25,7 @@ public class DealEntityTestBuilder extends AbstractTestBuilder<DealEntity> {
                 .withInstrument("123")
                 .withClosed(false)
                 .withValue(Money.builder().withAmount(BigDecimal.TEN).withCurrency(Currency.getInstance("SEK")).build());
+
 
     }
 

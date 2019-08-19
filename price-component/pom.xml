@@ -93,6 +93,31 @@
             </dependency>
 
             <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>order-component-entity</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>order-component-dao</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>order-component-dao-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>order-component-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>com.so4it.sugar</groupId>
                 <artifactId>${mongodb.dependency.management.artifact.id}</artifactId>
                 <version>${platform.dependency.management.version}</version>

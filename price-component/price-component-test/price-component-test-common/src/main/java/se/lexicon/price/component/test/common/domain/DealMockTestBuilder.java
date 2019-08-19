@@ -8,7 +8,7 @@ import se.lexicon.price.component.domain.Money;
 import java.math.BigDecimal;
 import java.util.Currency;
 
-/**
+    /**
      * @author Ahmed Molah
      */
     public class DealMockTestBuilder extends AbstractTestBuilder<DealMock> {
