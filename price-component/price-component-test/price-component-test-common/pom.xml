@@ -33,5 +33,10 @@
             <groupId>com.so4it.sugar</groupId>
             <artifactId>test-builder-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>order-component-dao</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
