@@ -3,7 +3,7 @@ package se.lexicon.price.component.service;
 import se.lexicon.order.component.domain.OrderDeal;
 import se.lexicon.order.component.entity.OrderDealEntity;
 import se.lexicon.order.componment.dao.OrderDealDao;
-import se.lexicon.price.component.domain.Money;
+import se.lexicon.order.component.domain.Money;
 import se.lexicon.price.component.domain.Price;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
@@ -70,11 +70,11 @@ public class PriceComponentServiceImpl implements PriceComponentService {
     @Override
     public BigDecimal placePrice(String instrumentId) {
         Set<OrderDealEntity> entities = orderDealDao.readAll();
-        Set<se.lexicon.order.component.domain.Money> values = entities.stream().filter(orderDealEntity -> orderDealEntity.getInstrument().equals(instrumentId)).map(OrderDealEntity::getPrice).collect(Collectors.toSet());
+        Set<Money> values = entities.stream().filter(orderDealEntity -> orderDealEntity.getInstrument().equals(instrumentId)).map(OrderDealEntity::getPrice).collect(Collectors.toSet());
 
         BigDecimal total=BigDecimal.ZERO;
         int count = 0;
-        for(se.lexicon.order.component.domain.Money val:values)
+        for(Money val:values)
         {
             total = total.add(val.getAmount());
             count++;
