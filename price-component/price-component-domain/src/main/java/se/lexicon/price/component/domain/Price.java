@@ -3,6 +3,7 @@ package se.lexicon.price.component.domain;
 import com.so4it.common.domain.DomainClass;
 import com.so4it.common.util.object.Required;
 import com.so4it.common.util.object.ValueObject;
+import se.lexicon.order.component.domain.Money;
 
 import java.math.BigDecimal;
 

@@ -1,9 +1,9 @@
 package se.lexicon.price.component.service;
 
 import se.lexicon.order.component.domain.OrderDeal;
+import se.lexicon.order.component.domain.Money;
 import se.lexicon.order.component.entity.OrderDealEntity;
 import se.lexicon.order.componment.dao.OrderDealDao;
-import se.lexicon.order.component.domain.Money;
 import se.lexicon.price.component.domain.Price;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
