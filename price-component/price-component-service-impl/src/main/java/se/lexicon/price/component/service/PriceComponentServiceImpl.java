@@ -42,9 +42,8 @@ public class PriceComponentServiceImpl implements PriceComponentService {
                 .withInstrument(orderDeal.getInstrument())
                 .withPrice(orderDeal.getPrice())
                 .withNoOfItems(orderDeal.getNoOfItems())
-                .withOrderId1(orderDeal.getMatchingOrderId())
-                .withOrderId2(orderDeal.getMatchingOrderId())
-                .withClosed(true)
+                .withOrderId(orderDeal.getOrderId())
+                .withSsn(orderDeal.getSsn())
                 .build();
 
         orderDealDao.insert(orderDealEntity);
