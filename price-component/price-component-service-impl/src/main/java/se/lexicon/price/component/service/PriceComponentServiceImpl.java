@@ -65,25 +65,24 @@ public class PriceComponentServiceImpl implements PriceComponentService {
         Set<PriceEntity> entities = priceDao.readAll();
         return BigDecimal.valueOf( entities.stream().map( rr -> rr.getValue().getAmount().doubleValue()).reduce(0.0,Double::sum));
     }
-
     @Override
     public BigDecimal placePrice(String instrumentId) {
-        Set<OrderDealEntity> entities = orderDealDao.readAll();
-        Set<Money> values = entities.stream().filter(orderDealEntity -> orderDealEntity.getInstrument().equals(instrumentId)).map(OrderDealEntity::getPrice).collect(Collectors.toSet());
 
-        BigDecimal total=BigDecimal.ZERO;
-        int count = 0;
-        for(Money val:values)
-        {
-            total = total.add(val.getAmount());
-            count++;
-            System.out.println("Total " + total );
-            System.out.println("Count " + count);
-            System.out.println("Values " + values);
-        }
-        System.out.println("Total Total " + total);
-        total=total.divide(BigDecimal.valueOf(count),3);
-        System.out.println("Total " + total);
-        return total;
+        //gets all OrderDealEntitites
+        Set<OrderDealEntity> entities = orderDealDao.readAll();
+
+        Set<Money> values = entities.stream()
+                .filter(orderDealEntity -> orderDealEntity.getInstrument().equals(instrumentId))  //filters out those OrderDealEntities that have the same instrumentId as the parameter
+                .map(OrderDealEntity::getPrice) //OrderDealEntity --> Money
+                .collect(Collectors.toSet());
+
+        Set<BigDecimal> decimals = values.stream()
+                .map(Money::getAmount)//Money --> BigDecimal
+                .collect(Collectors.toSet());
+
+        BigDecimal result = decimals.stream()
+                .reduce(BigDecimal.ZERO, BigDecimal::add); //adds the BigDeciamls together
+
+        return result;
     }
 }
