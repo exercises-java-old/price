@@ -6,6 +6,7 @@ import se.lexicon.price.component.domain.DealMock;
 import se.lexicon.price.component.domain.Money;
 
 import java.math.BigDecimal;
+import java.util.Currency;
 
     /**
      * @author Ahmed Molah
@@ -21,7 +22,7 @@ import java.math.BigDecimal;
                     .withId("11111")
                     .withInstrument("123")
                     .withClosed(false)
-                    .withValue(Money.builder().withAmount(BigDecimal.valueOf(10)).build());
+                    .withValue(Money.builder().withAmount(BigDecimal.valueOf(10)).withCurrency(Currency.getInstance("SEK")).build());
         }
 
         public se.lexicon.price.component.test.common.domain.DealMockTestBuilder builder(String priceId){

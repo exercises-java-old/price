@@ -6,6 +6,8 @@ import se.lexicon.price.component.domain.Money;
 import se.lexicon.price.component.entity.DealEntity;
 
 import java.math.BigDecimal;
+import java.util.Currency;
+
 
 
 /**
@@ -22,7 +24,8 @@ public class DealEntityTestBuilder extends AbstractTestBuilder<DealEntity> {
                 .withId("1111")
                 .withInstrument("123")
                 .withClosed(false)
-                .withValue(Money.builder().withAmount(BigDecimal.TEN).build());
+                .withValue(Money.builder().withAmount(BigDecimal.TEN).withCurrency(Currency.getInstance("SEK")).build());
+
 
     }
 
