@@ -4,7 +4,7 @@ import gherkin.deps.com.google.gson.JsonElement;
 import gherkin.deps.com.google.gson.JsonObject;
 import gherkin.deps.com.google.gson.JsonParser;
 import se.lexicon.price.component.dao.PriceDao;
-import se.lexicon.price.component.domain.Money;
+import se.lexicon.order.component.domain.Money;
 import se.lexicon.price.component.domain.Order;
 import se.lexicon.price.component.domain.Price;
 import se.lexicon.price.component.test.integration.service.PriceComponentServiceIntegrationTestSuite;

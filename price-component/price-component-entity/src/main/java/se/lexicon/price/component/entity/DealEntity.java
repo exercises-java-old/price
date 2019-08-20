@@ -7,8 +7,7 @@ import com.so4it.annotation.Allowed;
 import com.so4it.common.util.object.Required;
 import com.so4it.component.entity.AbstractEntityBuilder;
 import com.so4it.component.entity.IdEntity;
-
-import se.lexicon.price.component.domain.Money;
+import se.lexicon.order.component.domain.Money;
 
 @SpaceClass
 public class DealEntity extends IdEntity<String> {

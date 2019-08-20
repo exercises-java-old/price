@@ -16,15 +16,16 @@ public class OrderDealTestBuilder extends AbstractTestBuilder<OrderDeal> {
 
     private OrderDeal.Builder builder;
 
+    private static int id = 1;
 
     public OrderDealTestBuilder(OrderDeal.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
         this.builder
-                .withId("11111")
-                .withInstrument("123")
+                .withId("" + id)
+                .withInstrument("inst" + id++)
                 .withNoOfItems(90)
                 .withMatchingOrderId("88")
-                .withPrice(se.lexicon.order.component.domain.Money.builder().withAmount(BigDecimal.valueOf(10)).withCurrency(Currency.getInstance("SEK")).build());
+                .withPrice(MoneyTestBuilder.builder().build());
 
 
     }
