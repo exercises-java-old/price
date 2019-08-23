@@ -15,16 +15,18 @@
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-api-common</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-api-mapper</artifactId>
+            <version>${project.version}</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-domain</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

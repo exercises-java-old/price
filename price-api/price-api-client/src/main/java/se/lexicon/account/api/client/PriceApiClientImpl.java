@@ -1,11 +1,11 @@
-package se.lexicon.price.api.client;
+package se.lexicon.account.api.client;
 
-import se.lexicon.price.api.PriceApiServiceGrpc;
-import se.lexicon.price.api.mapper.PriceBalanceApiMapper;
-import se.lexicon.price.api.mapper.PriceTransactionApiMapper;
 import com.so4it.common.util.object.Required;
 import com.so4it.ft.core.FaultTolerantBean;
 import com.so4it.metric.springframework.MetricsBean;
+import se.lexicon.price.api.PriceApiServiceGrpc;
+import se.lexicon.price.api.mapper.PriceBalanceApiMapper;
+import se.lexicon.price.api.mapper.PriceTransactionApiMapper;
 
 @FaultTolerantBean(groupKey = PriceApiClientImpl.ACCOUNT_API_CLIENT_NAME)
 @MetricsBean(name = PriceApiClientImpl.ACCOUNT_API_CLIENT_NAME)

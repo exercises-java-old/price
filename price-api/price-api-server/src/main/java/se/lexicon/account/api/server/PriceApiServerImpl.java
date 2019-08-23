@@ -1,14 +1,14 @@
-package se.lexicon.price.api.server;
+package se.lexicon.account.api.server;
 
-import se.lexicon.price.api.*;
-import se.lexicon.price.component.client.PriceComponentClient;
-import com.so4it.price.api.mapper.PriceBalanceApiMapper;
-import com.so4it.price.api.mapper.PriceTransactionApiMapper;
-import com.so4it.api.Price;
 import com.so4it.api.ApiServiceProvider;
+import com.so4it.api.Price;
 import com.so4it.api.util.StreamObserverErrorHandler;
 import com.so4it.common.util.object.Required;
+import com.so4it.price.api.mapper.PriceBalanceApiMapper;
+import com.so4it.price.api.mapper.PriceTransactionApiMapper;
 import io.grpc.stub.StreamObserver;
+import se.lexicon.price.api.*;
+import se.lexicon.price.component.client.PriceComponentClient;
 
 /**
  * @author Magnus Poromaa {@literal <mailto:magnus.poromaa@so4it.com/>}
