@@ -10,6 +10,7 @@
 
     <modules>
         <module>price-component</module>
+        <module>price-api</module>
 	<!--
 
         <module>agreement</module>
@@ -78,7 +79,7 @@
         <gs.license>Product=InsightEdge;Version=14.0;Type=PREMIUM;Customer=So4it_SEBX_DEV;Expiration=2019-Aug-28;Hash=8SJZ1HNZrUEDQxk3IO4V</gs.license>
 
         <api.specs.sugar.url>https://git.so4it.com/SO4IT/sugar-api-repository/raw/develop/src/main/proto</api.specs.sugar.url>
-        <api.specs.local.url>${project.basedir}/../../../protobuf/src/main/proto/seb</api.specs.local.url>
+        <api.specs.local.url>${project.basedir}/../../../api-repository/src/main/proto</api.specs.local.url>
 
         <!--
             Default maven properties

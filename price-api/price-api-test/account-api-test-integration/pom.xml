@@ -15,34 +15,42 @@
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-api-client</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-api-server</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-api-test-common</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-service</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-dao-impl</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-client</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-service-impl</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-test-common</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

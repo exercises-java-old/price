@@ -18,14 +18,17 @@
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-api-server</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-client</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-service</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <!--
