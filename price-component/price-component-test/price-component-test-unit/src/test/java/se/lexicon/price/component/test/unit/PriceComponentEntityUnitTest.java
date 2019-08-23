@@ -14,8 +14,5 @@ public class PriceComponentEntityUnitTest {
     private static final String PACKAGE_NAME = "se.lexicon.price.component.test.common.entity";
 
     @Test
-    public void testDomainCompliance() {
-
-        TestBuilderExecutor.execute(PACKAGE_NAME, EntityMatchers.getMatchers());
-    }
+    public void testDomainCompliance() { TestBuilderExecutor.execute(PACKAGE_NAME, EntityMatchers.getMatchers()); }
 }
