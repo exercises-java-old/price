@@ -24,10 +24,9 @@ public class OrderDealTestBuilder extends AbstractTestBuilder<OrderDeal> {
                 .withId("" + id)
                 .withInstrument("inst" + id++)
                 .withNoOfItems(90)
-                .withMatchingOrderId("88")
+                .withOrderId("88")
+
                 .withPrice(MoneyTestBuilder.builder().build());
-
-
     }
 
 
@@ -52,7 +51,7 @@ public class OrderDealTestBuilder extends AbstractTestBuilder<OrderDeal> {
     }
 
     public OrderDealTestBuilder withMatchingOrderId(String matchingOrderId){
-        builder.withMatchingOrderId(matchingOrderId);
+        builder.withOrderId(matchingOrderId);
         return this;
     }
 
