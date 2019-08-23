@@ -1,7 +1,7 @@
-package se.lexicon.price.api.client;
+package se.lexicon.account.api.client;
 
-import com.so4it.api.Price;
 import com.so4it.api.ApiClientProvider;
+import com.so4it.api.Price;
 
 @ApiClientProvider(
         value = Price.NAME,
