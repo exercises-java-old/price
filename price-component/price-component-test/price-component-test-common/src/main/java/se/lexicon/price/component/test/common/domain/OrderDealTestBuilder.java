@@ -23,7 +23,7 @@ public class OrderDealTestBuilder extends AbstractTestBuilder<OrderDeal> {
                 .withId("11111")
                 .withInstrument("123")
                 .withNoOfItems(90)
-                .withMatchingOrderId("88")
+                .withOrderId("88")
                 .withPrice(se.lexicon.order.component.domain.Money.builder().withAmount(BigDecimal.valueOf(10)).withCurrency(Currency.getInstance("SEK")).build());
 
 
@@ -51,7 +51,7 @@ public class OrderDealTestBuilder extends AbstractTestBuilder<OrderDeal> {
     }
 
     public OrderDealTestBuilder withMatchingOrderId(String matchingOrderId){
-        builder.withMatchingOrderId(matchingOrderId);
+        builder.withOrderId(matchingOrderId);
         return this;
     }
 
