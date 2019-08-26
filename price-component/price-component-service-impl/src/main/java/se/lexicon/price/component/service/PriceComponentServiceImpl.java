@@ -10,7 +10,9 @@ import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.price.component.entity.PriceEntity;
 import se.lexicon.price.component.dao.PriceDao;
 
+import java.awt.*;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -68,20 +70,26 @@ public class PriceComponentServiceImpl implements PriceComponentService {
     @Override
     public BigDecimal placePrice(String instrumentId) {
 
+        // *** A temp solution until we find the calculation algorithm ***
+
         //gets all OrderDealEntitites
         Set<OrderDealEntity> entities = orderDealDao.readAll();
 
-        Set<Money> values = entities.stream()
+        List<Money> values = entities.stream()
                 .filter(orderDealEntity -> orderDealEntity.getInstrument().equals(instrumentId))  //filters out those OrderDealEntities that have the same instrumentId as the parameter
                 .map(OrderDealEntity::getPrice) //OrderDealEntity --> Money
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
 
-        Set<BigDecimal> decimals = values.stream()
+        List<BigDecimal> decimals = values.stream()
                 .map(Money::getAmount)//Money --> BigDecimal
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
 
         BigDecimal result = decimals.stream()
                 .reduce(BigDecimal.ZERO, BigDecimal::add); //adds the BigDeciamls together
+        System.out.println("Result before" + result );
+        result = result.divide(BigDecimal.valueOf(decimals.size()),3);
+        System.out.println("Size " + decimals.size());
+        System.out.println("Result " + result );
 
         return result;
     }

@@ -1,6 +1,5 @@
 package se.lexicon.price.api.test.integration;
 
-import se.lexicon.invoice.component.service.PriceComponentServiceProvider;
 import com.so4it.api.test.common.ApiFrameworkCommonTest;
 import com.so4it.common.bean.MapBeanContext;
 import com.so4it.common.jmx.MBeanRegistry;
@@ -24,13 +23,14 @@ import org.junit.rules.RuleChain;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.junit.runners.Suite;
+import se.lexicon.price.component.service.PriceComponentServiceProvider;
 
 /**
  * @author Magnus Poromaa {@literal <mailto:magnus.poromaa@so4it.com/>}
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        PriceApiClientClientIntegrationTest.class
+        PriceApiClientIntegrationTest.class
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PriceApiIntegrationTestSuite {
