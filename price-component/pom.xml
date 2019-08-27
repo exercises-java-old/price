@@ -94,26 +94,8 @@
 
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>order-component-entity</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.lexicon</groupId>
-                <artifactId>order-component-dao</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.lexicon</groupId>
-                <artifactId>order-component-dao-impl</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.lexicon</groupId>
-                <artifactId>order-component-domain</artifactId>
-                <version>${project.version}</version>
+                <artifactId>order-component</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
 

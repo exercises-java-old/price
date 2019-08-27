@@ -50,7 +50,11 @@
             <groupId>com.lexicon</groupId>
             <artifactId>price-component-service-impl</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>order-component-dao-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.so4it.sugar</groupId>
             <artifactId>configuration-test-common</artifactId>

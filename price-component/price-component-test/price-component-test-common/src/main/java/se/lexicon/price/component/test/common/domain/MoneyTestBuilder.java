@@ -24,12 +24,12 @@ public class MoneyTestBuilder extends AbstractTestBuilder<Money> {
     }
 
     public MoneyTestBuilder withCurrency(String currency){
-        this.currency = Currency.getInstance(currency);
+        builder.withCurrency(Currency.getInstance(currency));
         return this;
     }
 
     public MoneyTestBuilder withAmount(BigDecimal amount){
-        this.amount = amount;
+        builder.withAmount(amount);
         return this;
     }
 

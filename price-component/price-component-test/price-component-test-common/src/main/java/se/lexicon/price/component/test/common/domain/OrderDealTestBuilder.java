@@ -25,7 +25,7 @@ public class OrderDealTestBuilder extends AbstractTestBuilder<OrderDeal> {
                 .withInstrument("inst" + id++)
                 .withNoOfItems(90)
                 .withOrderId("88")
-
+                .withSsn("123")
                 .withPrice(MoneyTestBuilder.builder().build());
     }
 

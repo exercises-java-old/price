@@ -11,13 +11,14 @@
     <artifactId>price-api</artifactId>
     <packaging>pom</packaging>
 
+
     <modules>
         <module>price-api-client</module>
         <module>price-api-common</module>
         <module>price-api-mapper</module>
         <module>price-api-pu</module>
         <module>price-api-server</module>
-        <!--module>price-api-test</module-->
+        <module>price-api-test</module>
     </modules>
 
 

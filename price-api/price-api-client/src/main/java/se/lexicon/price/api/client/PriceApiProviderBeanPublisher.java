@@ -1,4 +1,4 @@
-package se.lexicon.account.api.client;
+package se.lexicon.price.api.client;
 
 import com.so4it.api.AbstractApiClientProviderBeanPublisher;
 import com.so4it.api.ApiFrameworkConfiguration;
@@ -9,7 +9,8 @@ import com.so4it.common.bean.BeanProxyInvocationHandler;
 import com.so4it.metric.springframework.MetricsTimerBeanProxy;
 import com.so4it.request.core.RequestContextBeanProxy;
 import io.grpc.ManagedChannel;
-import se.lexicon.price.api.PriceApiServiceGrpc;
+import se.lexicon.price.PriceApiServiceGrpc;
+
 
 public class PriceApiProviderBeanPublisher extends AbstractApiClientProviderBeanPublisher {
 
