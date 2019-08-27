@@ -86,7 +86,7 @@ public class PriceComponentServiceImpl implements PriceComponentService {
 
         BigDecimal result = decimals.stream()
                 .reduce(BigDecimal.ZERO, BigDecimal::add); //adds the BigDeciamls together
-        System.out.println("Result before" + result );
+        System.out.println("Result before " + result );
         result = result.divide(BigDecimal.valueOf(decimals.size()),3);
         System.out.println("Size " + decimals.size());
         System.out.println("Result " + result );

@@ -51,20 +51,20 @@ public class PriceComponentServiceIntegrationTest {
 
         priceComponentService.createOrderDeal(OrderDealTestBuilder.builder()
                 .withInstrument("inst1")
-                .withPrice(MoneyTestBuilder.builder()
-                        .withAmount(BigDecimal.valueOf(500d)).build()).build());
+                .withPrice(MoneyTestBuilder.builder().withAmount(BigDecimal.valueOf(200d)).build())
+                .build());
 
         priceComponentService.createOrderDeal(OrderDealTestBuilder.builder()
                 .withInstrument("inst1")
-                .withPrice(MoneyTestBuilder.builder()
-                        .withAmount(BigDecimal.valueOf(300d)).build()).build());
+                .withPrice(MoneyTestBuilder.builder().withAmount(BigDecimal.valueOf(300d)).build())
+                .build());
 
         priceComponentService.createOrderDeal(OrderDealTestBuilder.builder()
                 .withInstrument("inst3")
-                .withPrice(MoneyTestBuilder.builder()
-                        .withAmount(BigDecimal.valueOf(100d)).build()).build());
+                .withPrice(MoneyTestBuilder.builder().withAmount(BigDecimal.valueOf(150d)).build())
+                .build());
 
-        Assert.assertEquals(BigDecimal.valueOf(400d), priceComponentService.placePrice("inst1"));
+        Assert.assertEquals(BigDecimal.valueOf(250d), priceComponentService.placePrice("inst1"));
     }
 
 }
